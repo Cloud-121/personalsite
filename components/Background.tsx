@@ -2,7 +2,23 @@
 // components/Background.tsx
 import { useEffect, useRef } from "react";
 
-const Background = ({ children, theme = "dark" }: { children: React.ReactNode; theme?: "dark" | "light" }) => {
+interface Line {
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
+  path: [number, number][];
+  color: string;
+  speed: number;
+}
+
+const Background = ({
+  children,
+  theme = "dark",
+}: {
+  children: React.ReactNode;
+  theme?: "dark" | "light";
+}) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -19,7 +35,7 @@ const Background = ({ children, theme = "dark" }: { children: React.ReactNode; t
     resizeCanvas();
     window.addEventListener("resize", resizeCanvas);
 
-    const lines = [];
+    const lines: Line[] = []; // Specify the type of lines array
     const numLines = 100;
     const pathLength = 70;
     const lineRadius = 20;
@@ -48,7 +64,7 @@ const Background = ({ children, theme = "dark" }: { children: React.ReactNode; t
       });
     }
 
-    const updateLinePosition = (line, others) => {
+    const updateLinePosition = (line: Line, others: Line[]) => {
       const nextX = line.x + line.vx * line.speed;
       const nextY = line.y + line.vy * line.speed;
 
@@ -69,7 +85,9 @@ const Background = ({ children, theme = "dark" }: { children: React.ReactNode; t
       if (mouse.x !== null && mouse.y !== null) {
         const dxMouse = nextX - mouse.x;
         const dyMouse = nextY - mouse.y;
-        const distanceToMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
+        const distanceToMouse = Math.sqrt(
+          dxMouse * dxMouse + dyMouse * dyMouse,
+        );
 
         if (distanceToMouse < lineRadius * 2) {
           const angle = Math.atan2(dyMouse, dxMouse);
@@ -86,6 +104,8 @@ const Background = ({ children, theme = "dark" }: { children: React.ReactNode; t
     };
 
     const draw = () => {
+      if (!ctx) return; // Add a null check before using ctx
+
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       ctx.fillStyle = theme === "dark" ? "#121212" : "#e0e0e0";
@@ -106,14 +126,12 @@ const Background = ({ children, theme = "dark" }: { children: React.ReactNode; t
           line.x,
           line.y,
           line.x + 100,
-          line.y + 100
+          line.y + 100,
         );
         gradient.addColorStop(0, line.color);
         gradient.addColorStop(
           1,
-          theme === "dark"
-            ? "rgba(255, 255, 255, 0.2)"
-            : "rgba(0, 0, 0, 0.2)"
+          theme === "dark" ? "rgba(255, 255, 255, 0.2)" : "rgba(0, 0, 0, 0.2)",
         );
 
         ctx.strokeStyle = gradient;
