@@ -25,7 +25,6 @@ export default function Home() {
 
 
       Hiya, I see your taking a little look at my horrible site. If you'd like to email me your complaints, please send them to contact@lenleyngo.com :3
-    
     `,
   );
 
