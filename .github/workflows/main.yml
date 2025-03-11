@@ -25,4 +25,4 @@ jobs:
       - name: Build and push Docker image for multiple architectures
         run: |
           docker buildx create --use
-          docker buildx build --platform linux/arm64,linux/amd64 -t cloudfoxies/lnsite:latest --push .
+          docker buildx build --platform linux/arm64 -t cloudfoxies/lnsite:latest --push .
