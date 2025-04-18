@@ -128,8 +128,18 @@ export default function About() {
           learn new things.
         </p>
 
+        <h2 className="text-2xl font-semibold mt-8">Interests</h2>
+        <p className="mt-2">
+        I enjoy contributing to open-source projects to support development and deepen my understanding of the technologies involved. I'm passionate about open-source software and hardware, with experience in Python, JavaScript, and Bash, and I'm currently learning more about Kubernetes and Rust. I enjoy exploring new challenges through a variety of open-source projects, many of which are available on my GitHub.
+        </p>
 
-        <h2 className="text-2xl font-semibold mt-8">Contact</h2>
+        <h2 className="text-2xl font-semibold mt-8">Goals</h2>
+        <p className="mt-2">
+          My primary goal currently is to discover more about the world of open-source software and hardware, and contribite to the development of open-source projects. 
+        </p>
+      
+
+        <h2 className="text-3xl font-semibold mt-8">Contact</h2>
         <p className="mt-2">
           If you&apos;d like to reach out, feel free to email me at{" "}
           <a className="text-blue-500" href="mailto:contact@lenleyngo.com">

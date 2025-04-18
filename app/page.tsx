@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function Home() {
+  
   console.log(
     `
 ⠀⠀⠀⠀⠀⠀
@@ -256,13 +257,27 @@ export default function Home() {
                 >
                   Visit
                 </Link>
+
+                
               </div>
             </div>
           </div>
           
           ))}
+
         </div>
+        
+        <style jsx>{`
+          p {
+            text-align: center;
+          }
+        
+        `}</style>
+
       </div>
+
+      <p className="text-center text-gray-800 dark:text-gray-300">This site is <a className="text-blue-500" href="https://github.com/Cloud-121/personalsite">open source</a> and being hosted on a Raspberry Pi 4 cluster consisting of 3 nodes running <a className="text-blue-500" href="https://k3s.io/">K3S</a>. </p>
+
     </Background>
   );
 }
