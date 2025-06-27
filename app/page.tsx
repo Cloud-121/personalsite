@@ -65,7 +65,7 @@ export default function Home() {
       source: "https://github.com/Cloud-121/Motionblob",
       visit: "https://github.com/Cloud-121/Motionblob",
       image: "/files/images/motionblob.png",
-      tags: ["Python3", "serial", "effiency", "threading"],
+      tags: ["Python3", "Serial", "Effiency", "Threading"],
     },
     {
       title: "MyEntergy-API",
