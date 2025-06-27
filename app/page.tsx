@@ -211,7 +211,7 @@ export default function Home() {
         <hr className="my-8 w-full border-t border-gray-400 dark:border-gray-700 bg-gray-300 dark:bg-gray-700" />
 
         <p className="mt-3 text-lg max-w-2xl">
-          I'm a 15-year-old software developer and high school student from the US. I'm a <strong>tinkerer at heart</strong>, always eager to explore new technologies and push the boundaries of what's possible with <strong>open-source software and hardware</strong>.
+          I&apos;m a 15-year-old software developer and high school student from the US. I&apos;m a <strong>tinkerer at heart</strong>, always eager to explore new technologies and push the boundaries of what&apos;s possible with <strong>open-source software and hardware</strong>.
         </p>
         <p className="mt-7 text-lg">
           A little curious about me? View my {" "}
