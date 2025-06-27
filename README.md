@@ -1,3 +1,3 @@
-# Personal Site Internal Repository
+# Personal Site Repository
 
-## This repository is for internal use only at this current time.
+This repository contains the source code for my personal website.
