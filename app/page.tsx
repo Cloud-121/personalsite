@@ -169,49 +169,40 @@ export default function Home() {
         <hr className="my-8 w-full border-t border-gray-400 dark:border-gray-700 bg-gray-300 dark:bg-gray-700" />
 
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-4 text-left max-w-lg">
-        <p className="text-base">
-          Email:{" "}
-          <a
-            href="mailto:contact@lenleyngo.com"
-            className="text-blue-600 dark:text-blue-400 hover:underline"
-          >
-            contact@lenleyngo.com
-          </a>
-        </p>
-        <p className="text-base">
-          LinkedIn:{" "}
-          <a
-            href="https://www.linkedin.com/in/lenley-ngo-634452268/"
-            className="text-blue-600 dark:text-blue-400 hover:underline"
-          >
-            LenleyNgo
-          </a>
-        </p>
-        <p className="text-base">
-          GitHub:{" "}
-          <a
-            href="https://github.com/Cloud-121"
-            className="text-blue-600 dark:text-blue-400 hover:underline"
-          >
-            Cloud-121
-          </a>
-        </p>
-        <p className="text-base">
-          YouTube:{" "}
-          <a
-            href="https://www.youtube.com/@Cloud1202"
-            className="text-blue-600 dark:text-blue-400 hover:underline"
-          >
-            @Cloud1202
-          </a>
-        </p>
-      </div>
+<div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-4 text-left max-w-lg">
+  <p className="text-base">
+    Email:{" "}
+    <a
+      href="mailto:contact@lenleyngo.com"
+      className="text-blue-600 dark:text-blue-400 hover:underline"
+    >
+      contact@lenleyngo.com
+    </a>
+  </p>
+  <p className="text-base">
+    GitHub:{" "}
+    <a
+      href="https://github.com/Cloud-121"
+      className="text-blue-600 dark:text-blue-400 hover:underline"
+    >
+      Cloud-121
+    </a>
+  </p>
+  <p className="text-base col-span-2">
+    LinkedIn:{" "}
+    <a
+      href="https://www.linkedin.com/in/lenley-ngo-634452268/"
+      className="text-blue-600 dark:text-blue-400 hover:underline"
+    >
+      LenleyNgo
+    </a>
+  </p>
+</div>
 
         <hr className="my-8 w-full border-t border-gray-400 dark:border-gray-700 bg-gray-300 dark:bg-gray-700" />
 
         <p className="mt-3 text-lg max-w-2xl">
-          I&apos;m a 15-year-old software developer and high school student from the US. I&apos;m a <strong>tinkerer at heart</strong>, always eager to explore new technologies and push the boundaries of what&apos;s possible with <strong>open-source software and hardware</strong>.
+          I&apos;m a <strong>tinkerer at heart</strong>, always eager to explore new technologies and push the boundaries of what&apos;s possible with <strong>open-source software and hardware</strong>.
         </p>
         <p className="mt-7 text-lg">
           A little curious about me? View my {" "}
@@ -221,7 +212,7 @@ export default function Home() {
           >
             About Me
           </Link>{" "}
-          page to view mroe about my <strong>Skills</strong>, <strong>Interests</strong>, and <strong>Goals</strong>.
+          page to view more about my <strong>Skills</strong>, <strong>Interests</strong>, and <strong>Goals</strong>.
         </p>
         <h2 className="mt-8 text-2xl">Projects</h2>
 
