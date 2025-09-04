@@ -50,13 +50,13 @@ export default function Home() {
   // projects array
   const projects = [
     {
-      title: "Personal Site",
+      title: "RapidMesh",
       description:
-        "Personal Site made with Next.js and Tailwind CSS to use as a portfolio.",
-      tags: ["React", "Node.js", "TypeScript", "CSS"],
-      source: "https://github.com/Cloud-121/personalsite",
-      visit: "https://lenleyngo.com",
-      image: "/files/images/lnsite.jpg",
+        "Rapidly deploy an aerial Meshtastic node for situations where time is critical and permanent communication infrastructure is unavailable.",
+      tags: ["Meshtastic", "3D Modeling", "Design Efficiency"],
+      source: "https://github.com/Cloud-121/Rapidmesh",
+      visit: "https://www.hackster.io/ScarlettOSA/rapidmesh-rapidly-deploy-aerial-meshtastic-nodes-6d0fea",
+      image: "/files/images/rapidmesh.png",
     },
     {
       title: "Motionblob",
@@ -93,6 +93,15 @@ export default function Home() {
       source: "https://github.com/Cloud-121/webvescxmlviewer",
       visit: "https://vescxml.gproconnect.com/",
       image: "/files/images/webvescxmlviewer.png",
+    },
+    {
+      title: "Personal Site",
+      description:
+        "Personal Site made with Next.js and Tailwind CSS to use as a portfolio.",
+      tags: ["React", "Node.js", "TypeScript", "CSS"],
+      source: "https://github.com/Cloud-121/personalsite",
+      visit: "https://lenleyngo.com",
+      image: "/files/images/lnsite.png",
     },
     {
       title: "ETS2LA",
