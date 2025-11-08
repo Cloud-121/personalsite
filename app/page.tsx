@@ -50,13 +50,13 @@ export default function Home() {
   // projects array
   const projects = [
     {
-      title: "RapidMesh",
+      title: "Louisiana Mesh Community",
       description:
-        "Rapidly deploy an aerial Meshtastic node for situations where time is critical and permanent communication infrastructure is unavailable.",
-      tags: ["Meshtastic", "3D Modeling", "Design Efficiency"],
-      source: "https://github.com/Cloud-121/Rapidmesh",
-      visit: "https://www.hackster.io/ScarlettOSA/rapidmesh-rapidly-deploy-aerial-meshtastic-nodes-6d0fea",
-      image: "/files/images/rapidmesh.png",
+        "Founder and Lead maintainer of Louisiana Mesh Community, a growing group of individuals who share a common interest in Meshtastic, Meshcore, and other types of mesh radio networks.",
+      tags: ["Community Mangagment"],
+      source: "https://github.com/LouisianaMeshCommunity",
+      visit: "https://louisianamesh.org/",
+      image: "/files/images/lmesh_banner.png",
     },
     {
       title: "Motionblob",

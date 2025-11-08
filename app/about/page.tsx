@@ -147,7 +147,7 @@ export default function About() {
             <li><strong>Operating Systems:</strong> Linux (Debian-based, Arch-based, and Alpine-based distributions)</li>
             <li><strong>Version Control:</strong> Git & GitHub</li>
             <li><strong>Software Development:</strong> Plugin Development, Automation, Tool Creation, Modular Designs, Team Collaboration</li>
-            <li><strong>Hardware:</strong> Open-Source Hardware Tinkering and Customization</li>
+            <li><strong>Hardware:</strong> PCB Design, 3D Modeling, Reverse Engineering</li>
           </ul>
         </div>
 
