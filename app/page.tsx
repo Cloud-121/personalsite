@@ -63,7 +63,7 @@ export default function Home() {
       description:
         "Bringing motion cue indicators to Unix-like platforms, currently a work in progress.",
       source: "https://github.com/Cloud-121/Motionblob",
-      visit: "https://github.com/Cloud-121/Motionblob",
+      visit: "",
       image: "/files/images/motionblob.png",
       tags: ["Python3", "Serial", "Effiency", "Threading"],
     },
@@ -258,12 +258,14 @@ export default function Home() {
                 >
                   Source
                 </Link>
-                <Link
-                  href={project.visit}
-                  className="text-blue-600 dark:text-blue-400 hover:underline"
-                >
-                  Visit
-                </Link>
+                {project.visit && (
+                  <Link
+                    href={project.visit}
+                    className="text-blue-600 dark:text-blue-400 hover:underline"
+                  >
+                    Visit
+                  </Link>
+                )}
 
                 
               </div>
