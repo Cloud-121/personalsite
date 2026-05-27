@@ -1,11 +1,28 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
+
+type Project = {
+  title: string;
+  type: string;
+  description: string;
+  source: string;
+  visit: string;
+  image: string;
+  tags?: string[];
+};
 
 /**
  * Functional Background component to replace the external import.
  * This ensures the background logic works within the single-file environment.
  */
-const Background = ({ children, theme }) => {
+const Background = ({
+  children,
+  theme,
+}: {
+  children: React.ReactNode;
+  theme: string;
+}) => {
   return (
     <div className={`min-h-screen w-full transition-colors duration-500 ${theme === 'dark' ? 'bg-black text-white' : 'bg-gray-50 text-gray-900'}`}>
       {children}
@@ -55,7 +72,7 @@ export default function App() {
     document.documentElement.classList.toggle("dark", newTheme === "dark");
   };
 
-  const projects = [
+  const projects: Project[] = [
     {
       title: "Gulf Coast Mesh",
       type: "highlight",
@@ -139,7 +156,7 @@ export default function App() {
     }
   ];
 
-  const ProjectCard = ({ project }) => {
+  const ProjectCard = ({ project }: { project: Project }) => {
     const tags = project.tags ?? [];
     const hasSource = Boolean(project.source);
     const hasVisit = Boolean(project.visit);
@@ -202,13 +219,13 @@ export default function App() {
     <Background theme={isDarkMode ? "dark" : "light"}>
       <nav className="mt-4 ml-8 sm:ml-20 flex items-center gap-2">
         <span className="text-1xl font-bold dark:text-white">~/</span>
-        <a href="/" className="text-lg font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition duration-300 ease-in-out">
+        <Link href="/" className="text-lg font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition duration-300 ease-in-out">
           Home
-        </a>
+        </Link>
         <span className="text-1xl font-bold dark:text-white">/</span>
-        <a href="/about" className="text-lg font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition duration-300 ease-in-out">
+        <Link href="/about" className="text-lg font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition duration-300 ease-in-out">
           About
-        </a>
+        </Link>
       </nav>
 
       <div className="flex flex-col justify-start items-start min-h-screen p-8 sm:p-20 text-gray-800 dark:text-gray-200 transition-colors duration-300 relative">
@@ -243,9 +260,9 @@ export default function App() {
         </p>
         <p className="mt-7 text-lg text-left">
           A little curious about me? View my {" "}
-          <a href="/about" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold">
+          <Link href="/about" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold">
             About Me
-          </a>{" "}
+          </Link>{" "}
           page to view more about my <strong>Skills</strong>, <strong>Interests</strong>, and <strong>Goals</strong>.
         </p>
 
@@ -260,7 +277,7 @@ export default function App() {
                       src={project.image} 
                       alt={project.title} 
                       className="w-full h-full object-cover" 
-                      onError={(e) => { e.target.src = 'https://placehold.co/600x400?text=Banner+Not+Found'; }}
+                      onError={(e) => { e.currentTarget.src = "https://placehold.co/600x400?text=Banner+Not+Found"; }}
                     />
                   </div>
                   <div className="md:w-3/5 p-8 flex flex-col justify-center">
@@ -270,7 +287,7 @@ export default function App() {
                       {project.description}
                     </p>
                     <div className="flex flex-wrap gap-2 mb-6">
-                      {project.tags.map(tag => (
+                      {(project.tags ?? []).map(tag => (
                         <span key={tag} className="bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-md text-sm font-medium">
                           {tag}
                         </span>
