@@ -14,8 +14,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Lenley - Personal Site", 
+  title: "Lenley - Personal Site",
   description: "Personal site and Resume for Lenley Ngo",
+  icons: {
+    icon: [],
+    apple: [],
+  },
 };
 
 export default function RootLayout({
@@ -24,9 +28,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-gray-50 dark:bg-black">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-gray-50 text-gray-900 dark:bg-black dark:text-white`}
       >
         {children}
       </body>

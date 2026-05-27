@@ -1,7 +1,12 @@
 "use client";
 import { useState, useEffect } from "react";
-import Background from "@/components/Background";
 import Link from "next/link";
+
+const Background = ({ children, theme }: { children: React.ReactNode; theme: string }) => (
+  <div className={`min-h-screen w-full transition-colors duration-500 ${theme === "dark" ? "bg-black text-white" : "bg-gray-50 text-gray-900"}`}>
+    {children}
+  </div>
+);
 
 export default function About() {
   console.log(`                                      
@@ -84,46 +89,47 @@ export default function About() {
 
   return (
     <Background theme={isDarkMode ? "dark" : "light"}>
-      <div className="mt-4 ml-20">
-        <span
-          style={{ color: isDarkMode ? "white" : "black" }}
-          className="text-1xl font-bold"
-        >
-          ~/{" "}
-        </span>
+      <nav className="mt-4 ml-8 sm:ml-20 flex items-center gap-2">
+        <span className="text-1xl font-bold dark:text-white">~/</span>
         <Link
           href="/"
           className="text-lg font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition duration-300 ease-in-out"
         >
           Home
         </Link>
-        <span
-          style={{ color: isDarkMode ? "white" : "black" }}
-          className="text-1xl font-bold"
-        >
-          {" "}
-          /{" "}
-        </span>
+        <span className="text-1xl font-bold dark:text-white">/</span>
         <Link
           href="/about"
-          className="text-lg font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition duration-300 ease-in-out ml-1"
+          className="text-lg font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition duration-300 ease-in-out"
         >
           About
         </Link>
-      </div>
-      <div className="flex flex-col justify-start items-start min-h-screen p-8 sm:p-20 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+      </nav>
+      <div className="flex flex-col justify-start items-start min-h-screen p-8 sm:p-20 text-gray-800 dark:text-gray-200 transition-colors duration-300 relative">
         <div className="absolute top-0 right-0 m-4">
           <button
             onClick={toggleTheme}
-            className="px-3 py-1 rounded-lg bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200"
+            className="px-4 py-2 rounded-lg bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 font-medium hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
           >
-            {isDarkMode ? "Light Mode" : "Dark Mode"}
+            {isDarkMode ? "Light" : "Dark"}
           </button>
         </div>
 
         <h1 className="text-4xl font-bold">About Me</h1>
         <p className="mt-4 text-lg max-w-2xl">
           My name is Lenley, but I often go by <strong>Scarlett</strong> online. I&apos;m passionate about <strong>open-source software and hardware</strong>, and I enjoy learning and pushing my boundaries in many of the fields I&apos;m in.
+        </p>
+
+        <h2 className="text-2xl font-semibold mt-8">Current Work</h2>
+        <p className="mt-2 max-w-2xl">
+          I&apos;ve partnered with companies and currently manage{" "}
+          <a
+            href="https://gulfcoastmesh.org/"
+            className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-semibold transition duration-300 ease-in-out"
+          >
+            Gulf Coast Mesh
+          </a>
+          , a project building a <strong>statewide mesh network</strong> that interconnects communities across Louisiana and the broader Gulf Coast. I work with volunteers and industry partners to grow resilient radio infrastructure using open mesh technologies like MeshCore.
         </p>
 
         <h2 className="text-2xl font-semibold mt-8">Interests</h2>
