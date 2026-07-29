@@ -1,6 +1,6 @@
-"use client";
+'use client';
 // components/Background.tsx
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
 
 interface Line {
   x: number;
@@ -14,10 +14,10 @@ interface Line {
 
 const Background = ({
   children,
-  theme = "dark",
+  theme = 'dark',
 }: {
   children: React.ReactNode;
-  theme?: "dark" | "light";
+  theme?: 'dark' | 'light';
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -25,7 +25,7 @@ const Background = ({
     if (!canvasRef.current) return;
 
     const canvas = canvasRef.current;
-    const ctx = canvas.getContext("2d");
+    const ctx = canvas.getContext('2d');
 
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
@@ -33,7 +33,7 @@ const Background = ({
     };
 
     resizeCanvas();
-    window.addEventListener("resize", resizeCanvas);
+    window.addEventListener('resize', resizeCanvas);
 
     const lines: Line[] = []; // Specify the type of lines array
     const numLines = 100;
@@ -47,7 +47,7 @@ const Background = ({
       mouse.y = event.clientY + window.scrollY;
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove);
 
     for (let i = 0; i < numLines; i++) {
       lines.push({
@@ -57,7 +57,7 @@ const Background = ({
         vy: Math.random() * 2 - 1,
         path: [],
         color:
-          theme === "dark"
+          theme === 'dark'
             ? `hsl(${Math.random() * 360}, 100%, 75%)`
             : `hsl(${Math.random() * 360}, 50%, 40%)`,
         speed: Math.random() * 0.5 + 0.2,
@@ -86,7 +86,7 @@ const Background = ({
         const dxMouse = nextX - mouse.x;
         const dyMouse = nextY - mouse.y;
         const distanceToMouse = Math.sqrt(
-          dxMouse * dxMouse + dyMouse * dyMouse,
+          dxMouse * dxMouse + dyMouse * dyMouse
         );
 
         if (distanceToMouse < lineRadius * 2) {
@@ -108,7 +108,7 @@ const Background = ({
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      ctx.fillStyle = theme === "dark" ? "#121212" : "#e0e0e0";
+      ctx.fillStyle = theme === 'dark' ? '#121212' : '#e0e0e0';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       for (let i = 0; i < numLines; i++) {
@@ -126,12 +126,12 @@ const Background = ({
           line.x,
           line.y,
           line.x + 100,
-          line.y + 100,
+          line.y + 100
         );
         gradient.addColorStop(0, line.color);
         gradient.addColorStop(
           1,
-          theme === "dark" ? "rgba(255, 255, 255, 0.2)" : "rgba(0, 0, 0, 0.2)",
+          theme === 'dark' ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)'
         );
 
         ctx.strokeStyle = gradient;
@@ -150,31 +150,31 @@ const Background = ({
     draw();
 
     return () => {
-      window.removeEventListener("resize", resizeCanvas);
-      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener('resize', resizeCanvas);
+      window.removeEventListener('mousemove', handleMouseMove);
     };
   }, [theme]);
 
   return (
-    <div style={{ position: "relative", height: "auto" }}>
+    <div style={{ position: 'relative', height: 'auto' }}>
       <canvas
         ref={canvasRef}
         style={{
-          position: "fixed",
+          position: 'fixed',
           top: 0,
           left: 0,
-          width: "100%",
-          height: "100%",
+          width: '100%',
+          height: '100%',
           zIndex: -1,
         }}
       />
       <div
         style={{
-          position: "relative",
-          width: "100%",
-          minHeight: "100vh",
-          display: "flex",
-          flexDirection: "column",
+          position: 'relative',
+          width: '100%',
+          minHeight: '100vh',
+          display: 'flex',
+          flexDirection: 'column',
         }}
       >
         {children}
