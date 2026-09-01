@@ -13,26 +13,6 @@ type Project = {
   tags?: string[];
 };
 
-/**
- * Functional Background component to replace the external import.
- * This ensures the background logic works within the single-file environment.
- */
-const Background = ({
-  children,
-  theme,
-}: {
-  children: React.ReactNode;
-  theme: string;
-}) => {
-  return (
-    <div
-      className={`min-h-screen w-full transition-colors duration-500 ${theme === 'dark' ? 'bg-black text-white' : 'bg-gray-50 text-gray-900'}`}
-    >
-      {children}
-    </div>
-  );
-};
-
 export default function App() {
   useEffect(() => {
     console.log(
@@ -283,7 +263,7 @@ export default function App() {
   };
 
   return (
-    <Background theme={isDarkMode ? 'dark' : 'light'}>
+    <div className="min-h-screen w-full text-gray-900 transition-colors duration-500 dark:text-white">
       <nav className="mt-4 ml-8 sm:ml-20 flex items-center gap-2">
         <span className="text-1xl font-bold dark:text-white">~/</span>
         <Link
@@ -464,7 +444,17 @@ export default function App() {
         </div>
       </div>
 
-      <footer className="mt-20 pb-10 px-8 border-t border-gray-200 dark:border-gray-800 pt-10">
+      <div className="mt-20 flex justify-end px-8 sm:px-20">
+        <aside className="mesh-background-info">
+          <strong>What are the background lines?</strong>
+          <span>
+            Each line is a real packet flowing across the Gulf Coast Mesh
+            network. Its color represents the type of packet.
+          </span>
+        </aside>
+      </div>
+
+      <footer className="mt-4 pb-10 px-8 border-t border-gray-200 dark:border-gray-800 pt-10">
         <p className="text-center text-gray-600 dark:text-gray-400 text-sm">
           This site is{' '}
           <a
@@ -477,9 +467,9 @@ export default function App() {
           <a className="text-blue-500 hover:underline" href="https://k3s.io/">
             K3s
           </a>{' '}
-          cluster consisting of 4 nodes.
+          cluster consisting of 4 nodes with a uptime of 99.9%!
         </p>
       </footer>
-    </Background>
+    </div>
   );
 }

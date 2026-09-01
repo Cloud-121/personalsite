@@ -2,20 +2,6 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-const Background = ({
-  children,
-  theme,
-}: {
-  children: React.ReactNode;
-  theme: string;
-}) => (
-  <div
-    className={`min-h-screen w-full transition-colors duration-500 ${theme === 'dark' ? 'bg-black text-white' : 'bg-gray-50 text-gray-900'}`}
-  >
-    {children}
-  </div>
-);
-
 export default function About() {
   console.log(`
 
@@ -96,7 +82,7 @@ export default function About() {
   };
 
   return (
-    <Background theme={isDarkMode ? 'dark' : 'light'}>
+    <div className="min-h-screen w-full text-gray-900 transition-colors duration-500 dark:text-white">
       <nav className="mt-4 ml-8 sm:ml-20 flex items-center gap-2">
         <span className="text-1xl font-bold dark:text-white">~/</span>
         <Link
@@ -218,6 +204,6 @@ export default function About() {
           </a>
         </p>
       </div>
-    </Background>
+    </div>
   );
 }
