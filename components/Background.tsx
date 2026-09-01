@@ -297,8 +297,8 @@ export default function Background() {
       const controller = new AbortController();
       replayAbortController = controller;
 
-      let loadPromise!: Promise<boolean>;
-      loadPromise = (async () => {
+      const loadPromiseRef: { current?: Promise<boolean> } = {};
+      const loadPromise = (async () => {
         try {
           const response = await fetch('/api/mesh-replay', {
             cache: 'no-store',
@@ -333,10 +333,11 @@ export default function Background() {
           if (replayAbortController === controller) {
             replayAbortController = null;
           }
-          if (replayLoadPromise === loadPromise) replayLoadPromise = null;
+          if (replayLoadPromise === loadPromiseRef.current) replayLoadPromise = null;
         }
       })();
 
+      loadPromiseRef.current = loadPromise;
       replayLoadPromise = loadPromise;
       return loadPromise;
     };
