@@ -13,6 +13,37 @@ type Project = {
   tags?: string[];
 };
 
+const testimonials = [
+  {
+    quote: "How the h#$$ do you get so much accomplished? It's impressive.",
+    attribution: 'Collaborator, Gulf Coast Mesh',
+  },
+  {
+    quote: 'The Grumpy Board is performing very well compared to my previous deployment.',
+    attribution: 'Board owner and hardware operator',
+  },
+  {
+    quote:
+      "I'm new to MeshCore and this world. But I would like to thank you for everything you have been putting into this community, and I really appreciate it.",
+    attribution: 'Community member, MeshCore / Discord',
+  },
+  {
+    quote:
+      'I have been amazed at how quickly the answers you have given and the calm manner you navigate it all when randomly thrown at you.',
+    attribution: 'Community member, MeshCore / Discord',
+  },
+  {
+    quote:
+      "You appear to have a tremendous amount on your plate at the moment. Don't know how you do it all with such efficiency. It's impressive.",
+    attribution: 'Community collaborator',
+  },
+  {
+    quote:
+      "She built and manages the group's sites. I can't lose her from the community. She's one of the smartest people I know, even more so considering her age.",
+    attribution: 'Community maintainer',
+  },
+];
+
 export default function App() {
   useEffect(() => {
     console.log(
@@ -343,6 +374,42 @@ export default function App() {
           <strong>Interests</strong>, and <strong>Goals</strong>.
         </p>
 
+        <section
+          className="mt-12 w-full max-w-5xl"
+          aria-labelledby="feedback-heading"
+        >
+          <div className="flex items-center gap-4">
+            <h2
+              id="feedback-heading"
+              className="shrink-0 text-lg font-bold text-gray-500 dark:text-gray-400"
+            >
+              Feedback I&apos;ve received
+            </h2>
+            <div className="h-px flex-grow bg-gray-300 dark:bg-gray-700"></div>
+          </div>
+          <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {testimonials.map((testimonial, index) => (
+              <figure
+                key={`${testimonial.attribution}-${index}`}
+                className="flex flex-col rounded-lg border border-blue-500/15 bg-white/80 p-4 shadow-sm backdrop-blur-sm dark:bg-gray-800/80"
+              >
+                <blockquote className="flex-grow text-sm leading-relaxed text-gray-700 dark:text-gray-200">
+                  <span aria-hidden="true" className="text-lg text-blue-500">
+                    &ldquo;
+                  </span>
+                  {testimonial.quote}
+                  <span aria-hidden="true" className="text-lg text-blue-500">
+                    &rdquo;
+                  </span>
+                </blockquote>
+                <figcaption className="mt-3 text-xs font-medium text-gray-500 dark:text-gray-400">
+                  {testimonial.attribution}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+
         {/* Primary Work Section */}
         <div className="w-full mt-12">
           <h2 className="text-3xl font-bold border-b-2 border-blue-500 pb-2 mb-8 inline-block">
@@ -442,6 +509,7 @@ export default function App() {
               ))}
           </div>
         </div>
+
       </div>
 
       <div className="mt-20 flex justify-end px-8 sm:px-20">
