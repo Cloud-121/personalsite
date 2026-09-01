@@ -9,6 +9,7 @@ type Project = {
   source: string;
   visit: string;
   image: string;
+  imageFit?: 'cover' | 'contain';
   tags?: string[];
 };
 
@@ -89,7 +90,7 @@ export default function App() {
       title: 'The Grumpy Board',
       type: 'hardware',
       description:
-        'A Partnership with GrumpyMesh to design the perfect meshcore radio.',
+        'A partnership with GrumpyMesh to design the perfect MeshCore radio. They sold out in less than six hours.',
       source: '',
       visit: 'https://grumpymesh.com/board.html',
       image: '/files/images/direct-front.png',
@@ -112,14 +113,25 @@ export default function App() {
       image: '/files/images/lvr.png',
     },
     {
-      title: 'MeshCore-Audio',
+      title: 'Gulf Coast Mesh App',
       type: 'software',
       description:
-        'An app built to fit the needs of the Gulf Coast Mesh community, adding the ability to send voice audio over MeshCore in addition to text, not just messaging alone.',
+        'A free companion app for MeshCore LoRa mesh radios for off-grid, encrypted communication that works with no cell service, no Wi-Fi, and no internet connection required.',
       source: '',
       visit: '',
-      image: '/files/images/meshcore-open.png',
-      tags: ['Python', 'MeshCore', 'Audio'],
+      image: '/files/images/gulfcoastmeshapp.png',
+      imageFit: 'contain',
+      tags: ['MeshCore', 'LoRa'],
+    },
+    {
+      title: 'Gulf Coast Mesh Analyzer',
+      type: 'software',
+      description:
+        'A unified backend for Gulf Coast Mesh that monitors and logs owned repeaters, detects outages, and helps us maintain the strongest mesh network in the southern US.',
+      source: '',
+      visit: 'https://analyzer.gulfcoastmesh.org',
+      image: '/files/images/gulfcoastmeshlogo.png',
+      tags: ['MeshCore', 'Monitoring', 'Infrastructure'],
     },
     {
       title: 'Meeting Assistant',
@@ -162,6 +174,26 @@ export default function App() {
       image: '/files/images/myentergy-bridge.png',
     },
     {
+      title: 'Web VESC XML Viewer',
+      type: 'software',
+      description:
+        'A web viewer that formats XML files from VESC Tool for easier reading and sharing through an ID-based system.',
+      tags: ['Python', 'Streamlit', 'Containers'],
+      source: 'https://github.com/Cloud-121/webvescxmlviewer',
+      visit: '',
+      image: '/files/images/webvescxmlviewer.png',
+    },
+    {
+      title: 'Vipper Timekeeping Discord Bot',
+      type: 'software',
+      description:
+        "A Discord bot that helps communities with users across multiple time zones see one another's local time.",
+      tags: ['Python', 'discord.py', 'Containers'],
+      source: 'https://github.com/Cloud-121/Vipper-Timekeeping-discord-bot',
+      visit: '',
+      image: '/files/images/vipper-timekeeping-discord-bot.png',
+    },
+    {
       title: 'Baton Rouge RC',
       type: 'software',
       description: 'Radio control club website built with React and Node.js.',
@@ -192,7 +224,11 @@ export default function App() {
         <img
           src={project.image}
           alt={project.title}
-          className="h-48 w-full object-cover"
+          className={`h-48 w-full ${
+            project.imageFit === 'contain'
+              ? 'bg-[#103c4b] object-contain'
+              : 'object-cover'
+          }`}
           onError={(e) => {
             e.currentTarget.src =
               'https://placehold.co/600x400?text=Image+Not+Found';

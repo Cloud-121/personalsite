@@ -1,0 +1,434 @@
+.pageShell {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(45, 212, 191, 0.12), transparent 26rem),
+    #e8eef1;
+  color: #17252d;
+  padding: 2rem 1rem 4rem;
+}
+
+.toolbar {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto 1rem;
+  max-width: 8.5in;
+}
+
+.backLink {
+  color: #294854;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.backLink:hover {
+  color: #087f78;
+}
+
+.printButton {
+  align-items: center;
+  background: #103c4b;
+  border: 0;
+  border-radius: 0.65rem;
+  box-shadow: 0 8px 20px rgba(16, 60, 75, 0.2);
+  color: white;
+  cursor: pointer;
+  display: flex;
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 750;
+  gap: 0.55rem;
+  padding: 0.7rem 1rem;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.printButton:hover {
+  background: #087f78;
+  transform: translateY(-1px);
+}
+
+.printButton svg {
+  height: 1rem;
+  width: 1rem;
+}
+
+.resume {
+  background: #ffffff;
+  box-shadow: 0 24px 70px rgba(30, 55, 64, 0.16);
+  margin: 0 auto;
+  max-width: 8.5in;
+  overflow: hidden;
+}
+
+.header {
+  align-items: center;
+  background: #103c4b;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  min-height: 2.35in;
+  overflow: hidden;
+  padding: 0.48in 0.58in;
+  position: relative;
+}
+
+.header::after {
+  background: #51d0c4;
+  content: '';
+  height: 0.08in;
+  left: 0.58in;
+  position: absolute;
+  top: 0;
+  width: 1.05in;
+}
+
+.eyebrow {
+  color: #72ded5;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.17em;
+  margin: 0 0 0.12in;
+  text-transform: uppercase;
+}
+
+.header h1 {
+  font-size: 2.75rem;
+  letter-spacing: -0.045em;
+  line-height: 1;
+  margin: 0;
+}
+
+.intro {
+  color: #d8e8ec;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  margin: 0.2in 0 0;
+  max-width: 5.25in;
+}
+
+.headerMark {
+  align-items: center;
+  border: 2px solid rgba(114, 222, 213, 0.6);
+  border-radius: 50%;
+  color: #72ded5;
+  display: flex;
+  flex: 0 0 auto;
+  font-size: 1.4rem;
+  font-weight: 900;
+  height: 0.9in;
+  justify-content: center;
+  letter-spacing: -0.08em;
+  margin-left: 0.35in;
+  width: 0.9in;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 2.15in 1fr;
+}
+
+.sidebar {
+  background: #f0f5f5;
+  border-right: 1px solid #d9e5e6;
+  display: flex;
+  flex-direction: column;
+  gap: 0.34in;
+  padding: 0.42in 0.32in;
+}
+
+.sidebar h2 {
+  color: #103c4b;
+  font-size: 0.72rem;
+  letter-spacing: 0.13em;
+  margin: 0 0 0.14in;
+  text-transform: uppercase;
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1in;
+}
+
+.contactList a {
+  color: #315965;
+  font-size: 0.69rem;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
+
+.contactList a:hover {
+  color: #087f78;
+  text-decoration: underline;
+}
+
+.skillList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.055in;
+}
+
+.skillList span {
+  background: white;
+  border: 1px solid #d5e2e3;
+  border-radius: 999px;
+  color: #31505b;
+  font-size: 0.61rem;
+  line-height: 1;
+  padding: 0.055in 0.08in;
+}
+
+.compactList {
+  color: #385560;
+  font-size: 0.69rem;
+  line-height: 1.55;
+  margin: 0;
+  padding-left: 0.16in;
+}
+
+.education {
+  color: #385560;
+  font-size: 0.69rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.compactList li::marker,
+.experience li::marker {
+  color: #14a69a;
+}
+
+.mainColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.32in;
+  padding: 0.42in 0.48in 0.36in;
+}
+
+.sectionHeading {
+  align-items: center;
+  display: flex;
+  gap: 0.12in;
+  margin-bottom: 0.17in;
+}
+
+.sectionHeading span {
+  color: #13a397;
+  font-size: 0.61rem;
+  font-weight: 900;
+}
+
+.sectionHeading h2 {
+  color: #103c4b;
+  font-size: 0.9rem;
+  letter-spacing: 0.09em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.roleHeader {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+}
+
+.roleHeader h3,
+.project h3 {
+  color: #172f38;
+  font-size: 0.88rem;
+  margin: 0;
+}
+
+.roleHeader p {
+  color: #088a81;
+  font-size: 0.72rem;
+  font-weight: 750;
+  margin: 0.035in 0 0;
+}
+
+.roleHeader > span {
+  color: #648089;
+  font-size: 0.63rem;
+  margin-left: 0.2in;
+  text-align: right;
+}
+
+.experience ul {
+  color: #405b64;
+  font-size: 0.69rem;
+  line-height: 1.5;
+  margin: 0.14in 0 0;
+  padding-left: 0.18in;
+}
+
+.experience li + li {
+  margin-top: 0.055in;
+}
+
+.projectList {
+  display: grid;
+  gap: 0.12in 0.22in;
+  grid-template-columns: 1fr 1fr;
+}
+
+.project {
+  border-left: 2px solid #51d0c4;
+  padding-left: 0.11in;
+}
+
+.project p,
+.additionalGrid p {
+  color: #4b656e;
+  font-size: 0.65rem;
+  line-height: 1.45;
+  margin: 0.045in 0 0;
+}
+
+.additionalGrid {
+  display: grid;
+  gap: 0.11in 0.22in;
+  grid-template-columns: 1fr 1fr;
+}
+
+.additionalGrid p {
+  margin: 0;
+}
+
+.additionalGrid strong {
+  color: #28434d;
+  display: block;
+  font-size: 0.68rem;
+  margin-bottom: 0.02in;
+}
+
+.footer {
+  align-items: center;
+  background: #e3ecec;
+  border-top: 1px solid #cedddd;
+  display: flex;
+  justify-content: space-between;
+  min-height: 1.02in;
+  padding: 0.13in 0.38in 0.13in 0.58in;
+}
+
+.footer > div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 0.03in;
+}
+
+.footer strong {
+  color: #103c4b;
+  font-size: 0.72rem;
+}
+
+.footer span {
+  color: #54707a;
+  font-size: 0.61rem;
+}
+
+.qrBlock {
+  align-items: center;
+  display: flex;
+  gap: 0.08in;
+}
+
+.qrBlock span {
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.qrBlock img {
+  height: 0.72in;
+  image-rendering: pixelated;
+  width: 0.72in;
+}
+
+@media (max-width: 720px) {
+  .pageShell {
+    padding: 1rem 0;
+  }
+
+  .toolbar {
+    padding: 0 1rem;
+  }
+
+  .resume {
+    width: 100%;
+  }
+
+  .header {
+    min-height: auto;
+    padding: 2rem 1.5rem;
+  }
+
+  .header h1 {
+    font-size: 2.25rem;
+  }
+
+  .headerMark {
+    display: none;
+  }
+
+  .contentGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    border-bottom: 1px solid #d9e5e6;
+    border-right: 0;
+    padding: 1.5rem;
+  }
+
+  .mainColumn {
+    padding: 1.5rem;
+  }
+
+  .projectList,
+  .additionalGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    padding-left: 1.5rem;
+  }
+}
+
+@page {
+  margin: 0;
+  size: letter;
+}
+
+@media print {
+  .pageShell {
+    background: white;
+    padding: 0;
+  }
+
+  .toolbar {
+    display: none;
+  }
+
+  .resume {
+    box-shadow: none;
+    height: 11in;
+    max-width: none;
+    width: 8.5in;
+  }
+
+  .header,
+  .sidebar,
+  .footer,
+  .skillList span {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .contentGrid {
+    min-height: 7.63in;
+  }
+}
