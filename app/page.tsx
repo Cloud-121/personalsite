@@ -104,7 +104,7 @@ export default function App() {
         'A partnership with GrumpyMesh to design the perfect MeshCore radio. They sold out in less than six hours.',
       source: '',
       visit: 'https://grumpymesh.com/board.html',
-      image: '/files/images/direct-front.png',
+      image: '/files/images/grumpy-board.jpg',
     },
     {
       title: 'TG-Mesh',
