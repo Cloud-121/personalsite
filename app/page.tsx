@@ -19,7 +19,8 @@ const testimonials = [
     attribution: 'Collaborator, Gulf Coast Mesh',
   },
   {
-    quote: 'The Grumpy Board is performing very well compared to my previous deployment.',
+    quote:
+      'My Grumpy Board is preforming excellent. 100x better than the p1 pro it replaced!',
     attribution: 'Board owner and hardware operator',
   },
   {
@@ -104,7 +105,8 @@ export default function App() {
         'A partnership with GrumpyMesh to design the perfect MeshCore radio. They sold out in less than six hours.',
       source: '',
       visit: 'https://grumpymesh.com/board.html',
-      image: '/files/images/direct-front.png',
+      image: '/files/images/grumpy-board-deployed.jpg',
+      imageFit: 'contain',
     },
     {
       title: 'TG-Mesh',
