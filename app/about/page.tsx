@@ -188,6 +188,9 @@ export default function About() {
               <strong>Hardware:</strong> PCB Design, 3D Modeling, Reverse
               Engineering
             </li>
+            <li>
+              <strong>Licenses:</strong> FCC-licensed amateur radio operator
+            </li>
           </ul>
         </div>
 

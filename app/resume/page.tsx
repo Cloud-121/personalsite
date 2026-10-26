@@ -23,6 +23,7 @@ const skills = [
   '3D Modeling',
   'Reverse Engineering',
   'LoRa & MeshCore',
+  'Amateur Radio (FCC Licensed)',
 ];
 
 const projects = [
