@@ -105,8 +105,7 @@ export default function App() {
         'A partnership with GrumpyMesh to design the perfect MeshCore radio. They sold out in less than six hours.',
       source: '',
       visit: 'https://grumpymesh.com/board.html',
-      image: '/files/images/grumpy-board-deployed.jpg',
-      imageFit: 'contain',
+      image: '/files/images/grumpy-board-card.jpg',
     },
     {
       title: 'TG-Mesh',
@@ -155,6 +154,16 @@ export default function App() {
       visit: '',
       image: '/files/images/meetingorganizer.png',
       tags: ['Python', 'Community'],
+    },
+    {
+      title: 'Watchdog Flasher',
+      type: 'software',
+      description:
+        'A browser-based flasher that turns any nRF52840 board, including MeshCore and Meshtastic radios, into a SteamVR watchdog dongle using the radio firmware from your own SteamVR install.',
+      tags: ['JavaScript', 'nRF52840', 'UF2', 'SteamVR'],
+      source: 'https://github.com/Cloud-121/NRF-Valve-Watchdog',
+      visit: 'https://cloud-121.github.io/NRF-Valve-Watchdog/',
+      image: '/files/images/watchdog-flasher.png',
     },
     {
       title: 'Motionblob',
